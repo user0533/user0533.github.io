@@ -10,7 +10,6 @@ function vk_msg_send($peer_id,$text){
 	$get_params = http_build_query($request_params); 
 	file_get_contents('https://api.vk.com/method/messages.send?'. $get_params);
 }
-$arr = file('http://evkappe.herokuapp.com/dict.txt');
 $data = json_decode(file_get_contents('php://input'));
 switch ($data->type) {  
 	case 'confirmation': 
@@ -23,11 +22,10 @@ switch ($data->type) {
     /*if($str>=1 && $str<=8){
       echo $arr[
     }*/
-		$message_text = explode(" ",$message_text);
-		$str = $message_text[2];
-		if($str<=count($arr) && $str>=1){
-			vk_msg_send($peer,$arr[$str-1]);
-		}
+		$message_text = str_split($message_text);
+	if ($message_text[0]=='/' && $message_text=='1') {
+	vk_msg_send($peer, "GG");
+	}
 		else{
 			vk_msg_send($peer,"Я тебя не понимаю");
 		}
