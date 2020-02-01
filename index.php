@@ -1,10 +1,10 @@
 <?php
-$confirmation_token = "5d20587bc33c19bfaed84834fedaa060406a171824108a6b8474da3d60a56f97373dfde9f10541f2ac133";
+$confirmation_token = "7981442e";
 function vk_msg_send($peer_id,$text){
 	$request_params = array(
 		'message' => $text, 
 		'peer_id' => $peer_id, 
-		'access_token' => "7981442e",
+		'access_token' => "5d20587bc33c19bfaed84834fedaa060406a171824108a6b8474da3d60a56f97373dfde9f10541f2ac133",
 		'v' => '5.87' 
 	);
 	$get_params = http_build_query($request_params); 
