@@ -1,4 +1,4 @@
 <?php
-$arr = file('https://user0533.github.io/dict.txt');
+$arr = file('http://evkappe.herokuapp.com/dict.txt');
 print_r($arr);
 ?>
