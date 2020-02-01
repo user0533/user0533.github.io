@@ -35,12 +35,11 @@ switch ($data->type) {
         $userInfo = json_decode(file_get_contents("https://api.vk.com/method/users.get?user_ids={$userId}&v=5.0"));
 
         //и извлекаем из ответа его имя
-        $user_name = $userInfo->response[0]->first_name;
+        $text = $data->message->text;
 
         //С помощью messages.send и токена сообщества отправляем ответное сообщение
         $request_params = array(
-            'message' => "{$user_name}, ваше сообщение зарегистрировано!<br>".
-                            "Мы постараемся ответить в ближайшее время.",
+            'message' => "1",
             'user_id' => $userId,
             'access_token' => $token,
             'v' => '5.0'
