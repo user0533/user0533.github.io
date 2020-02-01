@@ -24,12 +24,12 @@ switch ($data->type) {
       echo $arr[
     }*/
 		$message_text = explode(" ",$message_text);
-		$str = $message_text[1];
+		$str = $message_text[2];
 		if($str<=count($arr) && $str>=1){
 			vk_msg_send($peer,$arr[$str-1]);
 		}
 		else{
-			vk_msg_send($peer,"KUKU GURU");
+			vk_msg_send($peer,"Я тебя не понимаю");
 		}
 		
 		echo 'ok';
