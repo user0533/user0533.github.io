@@ -25,8 +25,11 @@ switch ($data->type) {
     }*/
 		$message_text = explode(" ",$message_text);
 		$str = $message_text[1];
-		if (if($str<=count($arr) && $str>=1){
+		if($str<=count($arr) && $str>=1){
 			vk_msg_send($peer,$arr[$str-1]);
+		}
+		else{
+			vk_msg_send($peer,"KUKU GURU");
 		}
 		
 		echo 'ok';
