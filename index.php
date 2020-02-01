@@ -35,7 +35,7 @@ switch ($data->type) {
         $userInfo = json_decode(file_get_contents("https://api.vk.com/method/users.get?user_ids={$userId}&v=5.0"));
 
         //и извлекаем из ответа его имя
-        $text = $object->body;
+        $text = $data->object->body;
 
         //С помощью messages.send и токена сообщества отправляем ответное сообщение
         if ($text=='1') {
