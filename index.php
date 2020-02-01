@@ -35,15 +35,24 @@ switch ($data->type) {
         $userInfo = json_decode(file_get_contents("https://api.vk.com/method/users.get?user_ids={$userId}&v=5.0"));
 
         //и извлекаем из ответа его имя
-        $text = $data->message->text;
+        $text = $object->body;
 
         //С помощью messages.send и токена сообщества отправляем ответное сообщение
-        $request_params = array(
+        if ($text=='1') {
+            $request_params = array(
             'message' => "1",
             'user_id' => $userId,
             'access_token' => $token,
             'v' => '5.0'
         );
+        }
+        else {
+                   $request_params = array(
+            'message' => "2",
+            'user_id' => $userId,
+            'access_token' => $token,
+            'v' => '5.0' 
+        }
 
         $get_params = http_build_query($request_params);
 
