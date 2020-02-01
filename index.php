@@ -1,5 +1,5 @@
 <?php
-$confirmation_token = 'CONF_TOKEN'
+$confirmation_token = 'CONF_TOKEN';
 function vk_msg_send($peer_id,$text){
 	$request_params = array(
 		'message' => $text, 
