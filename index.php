@@ -23,12 +23,7 @@ switch ($data->type) {
       echo $arr[
     }*/
 		$message_text = str_split($message_text);
-	if ($message_text[0]=='/' && $message_text=='1') {
-	vk_msg_send($peer, "GG");
-	}
-		else{
 			vk_msg_send($peer,"Я тебя не понимаю");
-		}
 		
 		echo 'ok';
 	break;
