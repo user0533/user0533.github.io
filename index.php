@@ -10,7 +10,7 @@ function vk_msg_send($peer_id,$text){
 	$get_params = http_build_query($request_params); 
 	file_get_contents('https://api.vk.com/method/messages.send?'. $get_params);
 }
-$arr = file('http://evkappe.herokuapp.com/dict.txt');
+//$arr = file('http://evkappe.herokuapp.com/dict.txt');
 $data = json_decode(file_get_contents('php://input'));
 switch ($data->type) {  
 	case 'confirmation': 
@@ -19,14 +19,14 @@ switch ($data->type) {
 		
 	case 'message_new': 
 		$message_text = $data -> object -> text;
-    $peer = $data -> object -> peer_id;
+    		$peer = $data -> object -> peer_id;
     /*if($str>=1 && $str<=8){
       echo $arr[
     }*/
 		if ($message_text == "привет"){
 			vk_msg_send($peer,"hello");
 		}
-		}
+		
 		echo 'ok';
 	break;
 }
