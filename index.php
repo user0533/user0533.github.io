@@ -30,7 +30,5 @@ switch ($data->type) {
 		echo 'ok';
 	break;
 }
-if($str>=1 && $str<=8){
-  echo $arr[
-}
+
 ?>
