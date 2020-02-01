@@ -52,6 +52,7 @@ switch ($data->type) {
             'user_id' => $userId,
             'access_token' => $token,
             'v' => '5.0' 
+                       );
         }
 
         $get_params = http_build_query($request_params);
